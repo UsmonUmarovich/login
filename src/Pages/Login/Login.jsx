@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.sass";
 import api from "../../login.json";
 
@@ -6,35 +7,37 @@ export const Login = (props) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
+  const [isValid, setIsValid] = useState(true);
+
   const submitHandler = (event) => {
     event.preventDefault();
 
     if (api.username === name && api.password === password) {
-      // alert("true");
       props.setIsLogged(true);
     } else {
-      alert("false");
+      setIsValid(false);
     }
   };
 
   return (
-    <div className="login l">
-      <form onSubmit={submitHandler} className="l-form">
+    <div className="login lr">
+      <form onSubmit={submitHandler} className="lr-form">
         <input
           value={name}
           onChange={(event) => setName(event.target.value)}
           type="text"
-          className="l-input l-name"
+          className="lr-input l-name"
           placeholder="Name"
         />
         <input
           type="password"
-          className="l-input l-password"
+          className="lr-input l-password"
           placeholder="Password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <button className="l-btn">LOGIN</button>
+        <button className="lr-btn">LOGIN</button>
+        {!isValid ? <Link to="/register">Ro`yhatdan o'ting</Link> : ""}
       </form>
     </div>
   );
