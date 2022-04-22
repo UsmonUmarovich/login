@@ -9,17 +9,18 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isLogged === false) {
-      navigate("login");
+    console.log(isLogged);
+    if (!isLogged) {
+      return navigate("login");
     } else {
-      navigate("/");
+      return navigate("/");
     }
-  }, []);
+  }, [isLogged]);
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setIsLogged={setIsLogged} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Home />} />
       </Routes>
