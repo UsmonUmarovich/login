@@ -14,8 +14,19 @@ export const Login = (props) => {
 
     if (api.username === name && api.password === password) {
       props.setIsLogged(true);
+      return;
     } else {
       setIsValid(false);
+    }
+    for (let index = 0; index < props.users.length; index++) {
+      if (
+        props.users[index].username === name &&
+        props.users[index].password === password
+      ) {
+        props.setIsLogged(true);
+      } else {
+        setIsValid(false);
+      }
     }
   };
 

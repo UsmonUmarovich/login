@@ -5,8 +5,8 @@ import { Home } from "./Pages/Home/Home";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [users, setUsers] = useState([])
-  
+  const [users, setUsers] = useState([]);
+
   const [isLogged, setIsLogged] = useState(false);
   const navigate = useNavigate();
 
@@ -17,12 +17,18 @@ function App() {
       return navigate("/");
     }
   }, [isLogged]);
-  console.log(users);
+  
   return (
     <div className="App">
       <Routes>
-        <Route path="/login" element={<Login setIsLogged={setIsLogged} />} />
-        <Route path="/register" element={<Register setUsers={setUsers} users={users}/>} />
+        <Route
+          path="/login"
+          element={<Login setIsLogged={setIsLogged} users={users} />}
+        />
+        <Route
+          path="/register"
+          element={<Register setUsers={setUsers} users={users} />}
+        />
         <Route path="/" element={<Home />} />
       </Routes>
     </div>
