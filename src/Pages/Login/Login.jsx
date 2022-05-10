@@ -33,6 +33,7 @@ export const Login = (props) => {
   return (
     <div className="login lr">
       <form onSubmit={submitHandler} className="lr-form">
+        <h1>LOGIN</h1>
         <input
           value={name}
           onChange={(event) => setName(event.target.value)}
@@ -48,7 +49,7 @@ export const Login = (props) => {
           onChange={(event) => setPassword(event.target.value)}
         />
         <button className="lr-btn">LOGIN</button>
-        {!isValid ? <Link to="/register">Ro`yhatdan o'ting</Link> : ""}
+        {!isValid ? <Link className="login-btn" to="/register">Ro`yhatdan o'ting</Link> : ""}
       </form>
     </div>
   );

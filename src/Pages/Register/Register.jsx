@@ -21,6 +21,7 @@ export const Register = (props) => {
   return (
     <div className="login lr">
       <form onSubmit={submitHandler} className="lr-form">
+        <h1>SIGN UP</h1>
         <input
           value={name}
           onChange={(event) => setName(event.target.value)}
@@ -36,7 +37,7 @@ export const Register = (props) => {
           onChange={(event) => setPassword(event.target.value)}
         />
         <button className="lr-btn">SIGNUP</button>
-        <Link to="/login">Login</Link>
+        <Link className="login-btn" to="/login">Login</Link>
       </form>
     </div>
   );
