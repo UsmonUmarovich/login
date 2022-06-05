@@ -10,36 +10,44 @@ body
   display: flex
   justify-content: center
   align-items: center
+  background-color: #2e0f63
   &-form
       min-width: 300px
       max-width: 450px
-      width: 100%
+      width: 300px
       padding: 15px
       border-radius: 5px
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2)
       display: flex
       flex-direction: column
       gap: 20px
+      background: #2e0f6300
   &-input
       padding: 10px
       border-radius: 5px
-      border: 1px solid rgba(0, 0, 0, 0.3)
+      border: 1px solid #fff
       font-size: 16px
+      background: none
+      color: white
       &:focus
           outline: 1px solid rgba(0, 0, 0, 0.5)
   &-btn
-      padding: 10px
+      padding: 7px
+      width: 120px
       font-size: 16px
-      border-radius: 5px
-      background-color: transparent
-      color: #1b1b1b
+      border-radius: 20px
+      background-color: #8323e3
+      color: #fff
+      margin: 0 auto
       transition: 0.3s
       border: 1px solid rgba(0, 0, 0, 0.2)
       cursor: pointer
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
       &:hover
-          background-color: rgba(0,0,0, 0.8)
-          color: #fff
+        transform: scale(1.1)
+      &:active
+        transform: scale(0.95)
+        background: #8323e38d
 .login-btn
   background-color: #232ce3
   text-decoration: none
@@ -48,16 +56,18 @@ body
   padding: 10px 5px
   width: 130px
   border-radius: 20px
-  margin-left: 150px
+  margin: 0 auto
   font-size: 14px
   text-align: center
   transition: 200ms
   &:hover
-    transform: scale(1.1)
+    transform: scale(1.07)
   &:active
     transform: scale(0.95)
+    background: #232de3a4
 h1
   text-align: center
   font-size: 40px
   font-weight: 500
   letter-spacing: 2px
+  color: white
